@@ -30,23 +30,7 @@
 
     <div class="products w-full lg:w-3/4 -mt-4 flex items-center flex-wrap">
         {% for product in products %}
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6">
-                <a href="#">
-                    <img class="rounded-xl hover:shadow-lg">
-                </a>
-
-                <div class="pt-3 flex items-center justify-between">
-                    <a href="#">{{ product.name }}</a>
-
-                    <a href="#" class="text-purple-500 hover:text-purple-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
-                    </a>
-                </div>
-
-                <p class="pt-1 text-gray-400">$9.99</p>
-            </div>
+            {% include 'product/partials/product_list_item.html' %}
         {% endfor %}
     </div>
 </div>
