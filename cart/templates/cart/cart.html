@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+    <div class="products w-full lg:w-3/4">
+        <div class="product mb-6 flex pr-6">
+            <a href="#" class="w-1/4">
+                <img class="hover:shadow-lg rounded-xl" src="1.jpg">
+            </a>
+
+            <div class="w-3/4 pl-6">
+                <div class="flex justify-between">
+                    <a href="#" class="text-lg">Product name</a>
+
+                    <span class="mb-6 pt-1 text-gray-400">$9.99</span>
+                </div>
+
+                <hr>
+
+                <div class="quantity mt-6 flex items-center space-x-4">
+                    <a href="#" class="p-3 bg-gray-100">-</a>
+                    <span>2</span>
+                    <a href="#" class="p-3 bg-gray-100">+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product mb-6 flex pr-6">
+            <a href="#" class="w-1/4">
+                <img class="hover:shadow-lg rounded-xl" src="1.jpg">
+            </a>
+
+            <div class="w-3/4 pl-6">
+                <div class="flex justify-between">
+                    <a href="#" class="text-lg">Product name</a>
+
+                    <span class="mb-6 pt-1 text-gray-400">$9.99</span>
+                </div>
+
+                <hr>
+
+                <div class="quantity mt-6 flex items-center space-x-4">
+                    <a href="#" class="p-3 bg-gray-100">-</a>
+                    <span>2</span>
+                    <a href="#" class="p-3 bg-gray-100">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary w-full w-1/4 p-6 bg-gray-100 rounded-xl mt-3">
+        <h2 class="uppercase text-lg mb-5">Summary</h2>
+
+        <div class="mb-6 flex justify-between">
+            <span class="font-semibold">Total</span>
+            <span>$99</span>
+        </div>
+
+        <a href="#" class="inline-block px-8 py-4 rounded-xl bg-purple-500 hover:bg-purple-700 text-white">Checkout</a>
+    </div>
+</div>
+{% endblock %}
