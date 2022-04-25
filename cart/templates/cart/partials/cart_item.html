@@ -1,12 +1,12 @@
 {% if item %}
     <div class="product mb-6 flex pr-6" id="cart-item-{{ item.product.id }}">
-        <a href="#" class="w-1/4">
+        <a href="{% url 'product' item.product.slug %}" class="w-1/4">
             <img class="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail }}">
         </a>
 
         <div class="w-3/4 pl-6">
             <div class="flex justify-between">
-                <a href="#" class="text-lg">{{ item.product.name }}</a>
+                <a href="{% url 'product' item.product.slug %}" class="text-lg">{{ item.product.name }}</a>
 
                 <span class="mb-6 pt-1 text-gray-400">${{ item.total_price }}</span>
             </div>
