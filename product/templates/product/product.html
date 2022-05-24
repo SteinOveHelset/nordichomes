@@ -16,6 +16,10 @@
 
         <p class="mt-1 text-gray-400">${{ product.get_display_price }}</p>
 
+        {% if product.get_rating > 0 %}
+            <p class="mt-1 text-gray-400">Rating: {{ product.get_rating }} / 6</p>
+        {% endif %}
+
         {% if product.description %}
             <p class="mt-6 text-gray-700">
                 {{ product.description }}
@@ -31,6 +35,46 @@
         >
             Add to cart
         </a>
+    </div>
+
+    <div class="w-full mt-6">
+        <h2 class="text-xl">Reviews</h2>
+
+        {% if request.user.is_authenticated %}
+            <form method="post" action="." class="mt-6 mb-6 p-6 bg-gray-100 rounded-xl">
+                {% csrf_token %}
+
+                <div>
+                    <label>Rating</label><br>
+                    <select name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Comment</label><br>
+                    <textarea name="content"></textarea>
+                </div>
+
+                <div>
+                    <button>Submit</button>
+                </div>
+            </form>
+        {% endif %}
+
+        {% for review in product.reviews.all %}
+            <div class="px-4 py-6 bg-gray-100 rounded-xl mb-4">
+                <strong>Rating:</strong> {{ review.rating }}/6<br>
+                <strong>Date:</strong> {{ review.created_at|date:"Y-m-d" }}<br>
+                <strong>Comment:</strong><br>
+                {{ review.content }}
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
